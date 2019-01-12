@@ -5,6 +5,18 @@ const Episodes = function(){
   this.episodes = [];
 }
 
+Episodes.prototype.bindEvents = function(){
+  PubSub.subscribe('EpisodeSelectView:episode-selected', (event) => {
+    const index = event.detail;
+    const foundEpisode = this.findEpisode(index);
+    PubSub.publish('Episodes:episode-found', foundEpisode);
+  });
+}
+
+Episodes.prototype.findEpisode = function(index){
+  return this.episodes[index];
+}
+
 Episodes.prototype.getData = function(){
   const seasonsElement = document.querySelector('#seasons');
   seasonsElement.addEventListener('change', (event) => {
@@ -16,7 +28,7 @@ Episodes.prototype.getData = function(){
       const requestOne = new Request('https://rickandmortyapi.com/api/episode/1,2,3,4,5,6,7,8,9,10,11');
       requestOne.get().then((data) => {
         this.episodes = data;
-        PubSub.publish('Episodes:series-one-data-loaded', this.episodes);
+        PubSub.publish('Episodes:series-data-loaded', this.episodes);
         console.log('Published on series-one-data-loaded', this.episodes);
       });
       break;
@@ -24,7 +36,7 @@ Episodes.prototype.getData = function(){
       const requestTwo = new Request('https://rickandmortyapi.com/api/episode/12,13,14,15,16,17,18,19,20,21');
       requestTwo.get().then((data) => {
         this.episodes = data;
-        PubSub.publish('Episodes:series-two-data-loaded', this.episodes);
+        PubSub.publish('Episodes:series-data-loaded', this.episodes);
         console.log('Published on series-two-data-loaded', this.episodes);
       })
       break;
@@ -32,7 +44,7 @@ Episodes.prototype.getData = function(){
       const requestThree = new Request('https://rickandmortyapi.com/api/episode/22,23,24,25,26,27,28,29,30,31');
       requestThree.get().then((data) => {
         this.episodes = data;
-        PubSub.publish('Episodes:series-three-data-loaded', this.episodes);
+        PubSub.publish('Episodes:series-data-loaded', this.episodes);
         console.log('Published on series-three-data-loaded', this.episodes);
       });
     };
