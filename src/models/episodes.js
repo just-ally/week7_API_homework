@@ -17,7 +17,7 @@ Episodes.prototype.findEpisode = function(index){
   return this.episodes[index];
 }
 
-Episodes.prototype.getData = function(){
+Episodes.prototype.getEpisodeData = function(){
   const seasonsElement = document.querySelector('#seasons');
   seasonsElement.addEventListener('change', (event) => {
     const selectedSeason = event.target.value;

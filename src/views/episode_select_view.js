@@ -7,7 +7,6 @@ const EpisodeSelectView = function(element){
 EpisodeSelectView.prototype.bindEvents = function(){
   PubSub.subscribe('Episodes:series-data-loaded', (event) => {
     this.populate(event.detail);
-    // console.log(event.detail);
   });
   this.element.addEventListener('change', (event) => {
     const selectedIndex = event.target.value;

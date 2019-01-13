@@ -9,9 +9,9 @@ EpisodeDetailView.prototype.createAllEpisodeDetail = function(episode){
   name.textContent = episode.name;
   episodeDiv.appendChild(name);
 
-  const episodeRef = document.createElement('p');
-  episodeRef.textContent = episode.episode;
-  episodeDiv.appendChild(episodeRef);
+  // const episodeRef = document.createElement('p');
+  // episodeRef.textContent = episode.episode;
+  // episodeDiv.appendChild(episodeRef);
 
   return episodeDiv;
 };
@@ -34,7 +34,7 @@ EpisodeDetailView.prototype.createIndividualEpisodeDetail = function(episode){
   // const characterList = document.createElement('ul');
 
   // episode.characters.forEach((character) => {
-  //   console.log(character);
+  //   const characterInfo = new Character();
 
   return episodeDiv;
 };
