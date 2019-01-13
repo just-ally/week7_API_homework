@@ -4,13 +4,19 @@ const EpisodeListView = require('./views/episode_list_view.js');
 const Characters = require('./models/characters.js');
 const CharacterSelectView = require('./views/character_select_view.js');
 const CharacterInfoView = require('./views/character_info_view.js');
+const CharacterEpisodesSelectView = require('./views/character_episodes_select_view.js');
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log('JavaScript Loaded');
 
+  const characterEpisodeElement = document.querySelector('#charactersEpisodes');
+  const characterEpisodesSelectView = new CharacterEpisodesSelectView(characterEpisodeElement);
+  characterEpisodesSelectView.bindEvents();
+
   const characterInfoElement = document.querySelector('#character-info');
   const characterInfoView = new CharacterInfoView(characterInfoElement);
   characterInfoView.bindEvents();
+
 
   const characterSelectElement = document.querySelector('#characters');
   const characterSelectView = new CharacterSelectView(characterSelectElement);

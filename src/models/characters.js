@@ -15,12 +15,14 @@ Characters.prototype.bindEvents = function(){
 }
 
 Characters.prototype.getCharacterData = function(){
-  const request = new Request('https://rickandmortyapi.com/api/character/1,2,3,4,5,47,244,282,306,329');
+  const request = new Request('https://rickandmortyapi.com/api/character/1,2,3,4,5,47,244,282,306,329,242,262,162,7,196');
   request.get().then((data) => {
     this.characters = data;
     PubSub.publish('Characters:characters-data-loaded', this.characters);
   });
 };
+
+
 
 Characters.prototype.findCharacter = function(index){
   return this.characters[index];

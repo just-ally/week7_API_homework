@@ -11,6 +11,10 @@ Episodes.prototype.bindEvents = function(){
     const foundEpisode = this.findEpisode(index);
     PubSub.publish('Episodes:episode-found', foundEpisode);
   });
+  PubSub.subscribe('CharacterEpisodesSelectView:episode-selected', (event) => {
+    const selectedEpisodeURL = event.detail;
+    const selectedEpisodeInfo = this.getCharacterEpisodeData(selectedEpisodeURL);
+  });
 }
 
 Episodes.prototype.findEpisode = function(index){
@@ -49,6 +53,15 @@ Episodes.prototype.getEpisodeData = function(){
       });
     };
   });
+}
+
+Episodes.prototype.getCharacterEpisodeData = function(url){
+  const request = new Request(url);
+  request.get().then((data) => {
+    this.episodes = data;
+    PubSub.publish('Episodes:episode-by-character-loaded', this.episodes);
+    console.log('Publish on episode-by-character-loaded:', this.episodes);
+  })
 }
 
 module.exports = Episodes;

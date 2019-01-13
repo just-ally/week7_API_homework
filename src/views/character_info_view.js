@@ -9,6 +9,10 @@ CharacterInfoView.prototype.bindEvents = function(){
     console.log('found-character-info:', event.detail);
     this.render(event.detail);
   });
+  // const characterEpisodesDropdown = document.querySelector('#charactersEpisodes');
+  // characterEpisodesDropdown.addEventListener('change', (event) => {
+  //   const selectedEpisode = event.target.value;
+  // })
 
 }
 
@@ -31,21 +35,21 @@ CharacterInfoView.prototype.render = function(character){
   characterImage.src=character.image;
   this.container.appendChild(characterImage);
 
-  const characterEpisodesIntro = document.createElement('p');
-  characterEpisodesIntro.textContent = `${character.name} appears in the following episodes:`;
-  const characterEpisodes = document.createElement('ul');
-  character.episode.forEach((episode) => {
-    const episodeListItem = document.createElement('li');
-
-    const episodeLink = document.createElement('a');
-    episodeLink.href = episode;
-    episodeLink.innerText = episode;
-    episodeListItem.appendChild(episodeLink);
-    
-    characterEpisodes.appendChild(episodeListItem);
-  });
-  this.container.appendChild(characterEpisodesIntro);
-  this.container.appendChild(characterEpisodes);
+  // const characterEpisodesIntro = document.createElement('p');
+  // characterEpisodesIntro.textContent = `${character.name} appears in the following episodes:`;
+  // const characterEpisodes = document.createElement('ul');
+  // character.episode.forEach((episode) => {
+  //   const episodeListItem = document.createElement('li');
+  //   episodeListItem.textContent = episode;
+  //   // const episodeLink = document.createElement('a');
+  //   // episodeLink.href = episode;
+  //   // episodeLink.innerText = episode;
+  //   // episodeListItem.appendChild(episodeLink);
+  //
+  //   characterEpisodes.appendChild(episodeListItem);
+  // });
+  // this.container.appendChild(characterEpisodesIntro);
+  // this.container.appendChild(characterEpisodes);
 }
 
 module.exports = CharacterInfoView;
