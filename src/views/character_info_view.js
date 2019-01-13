@@ -11,11 +11,6 @@ CharacterInfoView.prototype.bindEvents = function(){
     this.renderInfo(event.detail);
     this.renderImage(event.detail);
   });
-  // const characterEpisodesDropdown = document.querySelector('#charactersEpisodes');
-  // characterEpisodesDropdown.addEventListener('change', (event) => {
-  //   const selectedEpisode = event.target.value;
-  // })
-
 }
 
 CharacterInfoView.prototype.renderInfo = function(character){
