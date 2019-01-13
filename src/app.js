@@ -1,6 +1,6 @@
 const Episodes = require('./models/episodes.js');
 const EpisodeSelectView = require('./views/episode_select_view.js');
-const EpisodeListView = require('./views/episode_list_view.js');
+const EpisodeInfoView = require('./views/episode_info_view.js');
 const Characters = require('./models/characters.js');
 const CharacterSelectView = require('./views/character_select_view.js');
 const CharacterInfoView = require('./views/character_info_view.js');
@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
   episodeSelectView.bindEvents();
 
   const episodesContainer = document.querySelector('#episode-list');
-  const episodeList = new EpisodeListView(episodesContainer);
-  episodeList.bindEvents();
+  const episodeInfoView = new EpisodeInfoView(episodesContainer);
+  episodeInfoView.bindEvents();
 
   const episodes = new Episodes();
   episodes.bindEvents();
