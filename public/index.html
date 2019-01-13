@@ -9,31 +9,38 @@
   <script src="js/bundle.js"></script>
 </head>
 <body>
-  <h1>Rick & Morty!!</h1>
+  <h1>Rick and Morty!!</h1>
 
-  <h2>Episode Info</h2>
-  <label for="seasons">Select an season:</label>
+  <h2>All the Schwiftiest Characters!</h2>
+  <div id="character-wrapper">
+    <label for="characters">Pick your favourite character here!</label>
+    <select id="characters">
+      <option selected disabled></option>
+    </select>
+    <div class="flex-div">
+      <div id="character-info" class="flex-box"></div>
+      <div id="character-picture" class="flex-box"></div>
+    </div>
+    <label for="charactersEpisodes">And see more about their episodes below:</label>
+    <select id="charactersEpisodes">
+      <option selected disabled></option>
+    </select>
+  </div>
+
+  <div id="episode-list"></div>
+
+  <h2>Or jump straight to the most wubba lubba dub dub episodes here!</h2>
+  <label for="seasons">First choose a season!</label>
   <select id="seasons">
-    <option selected disabled>Choose your season here!</option>
+    <option selected disabled></option>
     <option value="seasonOne">Season One</option>
     <option value="seasonTwo">Season Two</option>
     <option value="seasonThree">Season Three</option>
   </select>
-  <label for="episodes">Then select an episode:</label>
+  <label for="episodes">Then select an episode!</label>
   <select id="episodes">
     <option selected disabled></option>
   </select>
-  <div id="episode-list"></div>
 
-  <h2>Character Info</h2>
-  <label for="characters">Or select your favourite character here!</label>
-  <select id="characters">
-    <option selected disabled></option>
-  </select>
-  <div id="character-info"></div>
-  <label for="charactersEpisodes">And see more about their episodes:</label>
-  <select id="charactersEpisodes">
-    <option selected disabled></option>
-  </select>
 </body>
 </html>

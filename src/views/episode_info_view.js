@@ -8,6 +8,9 @@ EpisodeInfoView.prototype.bindEvents = function(){
   PubSub.subscribe('Episodes:episode-found', (event) => {
     this.renderEpisode(event.detail);
   });
+  PubSub.subscribe('Episodes:episode-by-character-loaded', (event) => {
+    this.renderEpisode(event.detail);
+  })
 }
 
 EpisodeInfoView.prototype.renderEpisode = function(episode){
@@ -18,11 +21,11 @@ EpisodeInfoView.prototype.renderEpisode = function(episode){
   this.container.appendChild(name);
 
   const episodeRef = document.createElement('p');
-  episodeRef.textContent = episode.episode;
+  episodeRef.textContent = `Episode Reference: ${episode.episode}`;
   this.container.appendChild(episodeRef);
 
   const airDate = document.createElement('p');
-  airDate.textContent = episode.air_date;
+  airDate.textContent = `Air Date: ${episode.air_date}`;
   this.container.appendChild(airDate);
 };
 

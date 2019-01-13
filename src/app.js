@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
   characterEpisodesSelectView.bindEvents();
 
   const characterInfoElement = document.querySelector('#character-info');
-  const characterInfoView = new CharacterInfoView(characterInfoElement);
+  const characterImageElement = document.querySelector('#character-picture');
+  const characterInfoView = new CharacterInfoView(characterInfoElement, characterImageElement);
   characterInfoView.bindEvents();
 
 

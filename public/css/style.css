@@ -1,0 +1,80 @@
+@font-face {
+  font-family: RickMorty;
+  src: local("GetSchwifty"),
+       local("Get-Schwifty"),
+       url(../fonts/get_schwifty__a_rick_and_morty_font_by_jonizaak-dajw4u8.ttf);
+  font-weight: bold;
+}
+
+body {
+  background-image: url('../images/RMbackground.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: RickMorty;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  -webkit-text-fill-color: lime;
+  -webkit-text-stroke-color: black;
+}
+
+h1 {
+  font-size: 70px;
+  -webkit-text-stroke-width: 2.5px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 45px;
+  -webkit-text-stroke-width: 1.5px;
+}
+
+h3 {
+  font-size: 35px;
+  -webkit-text-stroke-width: .75px;
+  margin-top: 2px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 20px;
+  -webkit-text-fill-color: black;
+  -webkit-text-stroke-color: lime;
+  -webkit-text-stroke-width: .25px;
+}
+
+.flex-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.flex-box {
+  margin-top:30px;
+  height: 100%;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+#character-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#character-image {
+  border: 4px solid black;
+  border-radius: 5px;
+}
+
+#character-wrapper {
+  background-color: #E89323;
+  padding: 20px;
+  border: 5px solid #E82323;
+  border-radius: 10px;
+  margin-left: 8%;
+  margin-right: 8%;
+}
